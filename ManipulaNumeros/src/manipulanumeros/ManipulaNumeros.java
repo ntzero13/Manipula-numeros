@@ -32,6 +32,8 @@ public class ManipulaNumeros {
                     NumeroDecrescente.ordenaDecrescente(x);
                     
                     break;
+                /*case 3:*/
+                    
                 
                    
                 default: System.out.println("Insira opção válida");
