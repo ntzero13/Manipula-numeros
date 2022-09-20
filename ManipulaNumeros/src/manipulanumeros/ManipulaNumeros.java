@@ -16,7 +16,7 @@ public class ManipulaNumeros {
             System.out.println("1 - Maior de 2 números");
             System.out.println("2 - Ordenar valores em decrescente");
             System.out.println("3 - Some os impares e multiplica os pares");
-            
+            System.out.println("4 - Troca de variaveis ");
             System.out.println("0 - Sair");
             System.out.println("Selecione a opção pretendida");
             op = ler.nextInt();
@@ -33,9 +33,12 @@ public class ManipulaNumeros {
                     NumeroDecrescente.ordenaDecrescente(x);
                     
                     break;
-                case 3:
-                    SomaImparMultiplicaPares();
-                    
+                case 3: SomaImparMultiplicaPares(); break;
+
+                case 4:
+                leValores("Insira um valor ", "Insira outro valor");
+                trocarnumero.trocaValoresEntreVariaveis(x,y);
+                break;    
                 
                    
                 default: System.out.println("Insira opção válida");
@@ -65,19 +68,19 @@ public class ManipulaNumeros {
 		  
 		    if(i>2){  
 		  
-		    par = par*i;  
+                        par = par*i;  
 		  
 		    }  
 		      
 		    else{  
-		    par = new Long(i);  
+                        par = new Long(i);  
 		    }  
 		  
 		}  
 		  
 		else{  
 		  
-		impar = impar+i; //este deu certo: 225  
+		impar = impar+i; 
 		}  
 		  
 		  
@@ -86,6 +89,14 @@ public class ManipulaNumeros {
 		System.out.println("Soma dos ímpares é: "+impar);  
 		System.out.println("Multiplicação dos pares é: "+par);  
 	}
+
+    private static void trocaValoresEntreVariaveis(int x, int y){
+        int z;
+        z = x;
+        x = y;
+        y = z;
+        System.out.println("Depois da troca x="+x+", y="+y);
+    }
     
     
     
