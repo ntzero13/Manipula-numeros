@@ -1,7 +1,0 @@
-package ManipulaNumeros;
-
-    class Carro{
-        static vold calcularValorfinal(){
-            
-        }
-    }
