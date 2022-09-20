@@ -49,9 +49,14 @@ public class ManipulaNumeros {
                     break;
 
                 case 6:
-                MediaAluno,registaNotas();
+                MediaAluno.registaNotas();
 
-                break;
+                    break;
+
+                    case 7:
+                    carro.CalcularValorFinal();
+    
+                    break;
                 default: System.out.println("Insira opção válida");
             }
         }while(op!=0);
