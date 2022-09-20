@@ -15,8 +15,9 @@ public class ManipulaNumeros {
             System.out.println("Menu de Operação com números");
             System.out.println("1 - Maior de 2 números");
             System.out.println("2 - Ordenar valores em decrescente");
-            System.out.println("3 - Some os impares e multiplica os pares");
-            System.out.println("4 - Troca de variaveis ");
+            System.out.println("3 - Soma impares multiplica pares");
+            System.out.println("4 - Troca valores entre variáveis");
+            
             System.out.println("0 - Sair");
             System.out.println("Selecione a opção pretendida");
             op = ler.nextInt();
@@ -31,16 +32,12 @@ public class ManipulaNumeros {
                         le1Valor("Insira um valor");
                     }while(x<=0);
                     NumeroDecrescente.ordenaDecrescente(x);
-                    
+                    break; 
+                case 3: somaImparesMultiplicaPares(); break;
+                case 4: 
+                    leValores("Insira um valor","Insira outro valor");
+                    TrocaNumero.trocaValoresEntreVariaveis(x,y);
                     break;
-                case 3: SomaImparMultiplicaPares(); break;
-
-                case 4:
-                leValores("Insira um valor ", "Insira outro valor");
-                trocarnumero.trocaValoresEntreVariaveis(x,y);
-                break;    
-                
-                   
                 default: System.out.println("Insira opção válida");
             }
         }while(op!=0);
@@ -57,49 +54,17 @@ public class ManipulaNumeros {
         x = ler.nextInt();
     }
 
-    private static void SomaImparMultiplicaPares() {
-    int x = 0, impar=0;
-		int i, mp, si, totalPar;
-		Long par = new Long(0);
-		  
-		for(i=0; i<30; i++){  
-		  
-		if(i%2==0){  
-		  
-		    if(i>2){  
-		  
-                        par = par*i;  
-		  
-		    }  
-		      
-		    else{  
-                        par = new Long(i);  
-		    }  
-		  
-		}  
-		  
-		else{  
-		  
-		impar = impar+i; 
-		}  
-		  
-		  
-		}  
-		  
-		System.out.println("Soma dos ímpares é: "+impar);  
-		System.out.println("Multiplicação dos pares é: "+par);  
-	}
-
-    private static void trocaValoresEntreVariaveis(int x, int y){
-        int z;
-        z = x;
-        x = y;
-        y = z;
-        System.out.println("Depois da troca x="+x+", y="+y);
+    private static void somaImparesMultiplicaPares() {
+        int soma=0,i;
+        long multi=1;
+        for(i=1;i<=30;i++){
+            if(i%2==0)
+                multi*=i;
+            else
+                soma+=i;
+        }
+        System.out.println("Multiplicação de pares: "+multi);
+        System.out.println("Soma de ímpares: "+soma);
     }
-    
-    
-    
-       
     
 }
